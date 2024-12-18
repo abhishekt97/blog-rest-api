@@ -12,7 +12,7 @@ public class BlogAPIException extends RuntimeException{
         this.errorMsg = errorMsg;
     }
 
-    public HttpStatus getHttpStatus() {
+    public HttpStatus  getHttpStatus() {
         return httpStatus;
     }
 

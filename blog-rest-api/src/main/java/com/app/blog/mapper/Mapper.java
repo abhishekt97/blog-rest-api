@@ -7,38 +7,18 @@ import com.app.blog.entity.Post;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 public class Mapper {
 
     @Autowired
     private static ModelMapper modelMapper = new ModelMapper();
 
-    public Mapper(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
+
 
     public static PostDTO mapToDTO(Post post){
-//        PostDTO postDTO = new PostDTO();
-//        postDTO.setId(post.getId());
-//        postDTO.setTitle(post.getTitle());
-//        postDTO.setDescription(post.getDescription());
-//        postDTO.setContent(post.getContent());
-//        postDTO.setComments(post.getComments().stream()
-//                .map(Mapper::mapToCommentDTO)
-//                .collect(Collectors.toSet()));
-//        return postDTO;
         return modelMapper.map(post, PostDTO.class);
     }
 
     public static Post mapToEntity(PostDTO postDTO){
-//        Post post = new Post();
-//        post.setId(postDTO.getId());
-//        post.setTitle(postDTO.getTitle());
-//        post.setDescription(postDTO.getDescription());
-//        post.setContent(postDTO.getContent());
-//        post.setComments(postDTO.getComments().stream()
-//                .map(Mapper::mapToCommentEntity)
-//                .collect(Collectors.toSet()));
         return modelMapper.map(postDTO, Post.class);
     }
 
