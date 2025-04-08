@@ -12,8 +12,6 @@ public class Mapper {
     @Autowired
     private static ModelMapper modelMapper = new ModelMapper();
 
-
-
     public static PostDTO mapToDTO(Post post){
         return modelMapper.map(post, PostDTO.class);
     }

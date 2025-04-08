@@ -67,7 +67,7 @@ public class GlobalExceptionHandler{
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<ErrorDetails> constraintVoilationException(ConstraintViolationException ex,
+    public ResponseEntity<ErrorDetails> constraintViolationException(ConstraintViolationException ex,
                                                                      WebRequest request){
         ErrorDetails error = new ErrorDetails(new Date(),
                 ex.getConstraintViolations().stream().
